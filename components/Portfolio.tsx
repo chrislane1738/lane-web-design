@@ -1,4 +1,7 @@
+"use client";
+
 import SectionHeading from "@/components/ui/SectionHeading";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface Project {
   title: string;
@@ -7,27 +10,29 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { title: "Coastal Realty", category: "Real Estate", color: "from-blue-500 to-cyan-400" },
-  { title: "FreshBite Kitchen", category: "Restaurant", color: "from-orange-500 to-amber-400" },
-  { title: "Summit Fitness", category: "Health & Fitness", color: "from-green-500 to-emerald-400" },
-  { title: "Apex Legal Group", category: "Professional Services", color: "from-indigo-500 to-violet-400" },
-  { title: "Bloom Botanicals", category: "E-Commerce", color: "from-pink-500 to-rose-400" },
-  { title: "NovaTech Solutions", category: "Technology", color: "from-slate-600 to-slate-400" },
+  { title: "Coastal Realty", category: "Real Estate", color: "from-green-600 to-emerald-400" },
+  { title: "FreshBite Kitchen", category: "Restaurant", color: "from-gray-700 to-gray-400" },
+  { title: "Summit Fitness", category: "Health & Fitness", color: "from-green-700 to-green-400" },
+  { title: "Apex Legal Group", category: "Professional Services", color: "from-gray-800 to-gray-500" },
+  { title: "Bloom Botanicals", category: "E-Commerce", color: "from-emerald-600 to-teal-400" },
+  { title: "NovaTech Solutions", category: "Technology", color: "from-slate-700 to-slate-400" },
 ];
 
 export default function Portfolio() {
+  const sectionRef = useScrollAnimation();
+
   return (
-    <section id="portfolio" className="py-20 md:py-28 bg-muted">
+    <section id="portfolio" className="py-20 md:py-28 bg-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Our Work"
           subtitle="A selection of projects we've brought to life for our clients."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project) => (
+          {projects.map((project, i) => (
             <div
               key={project.title}
-              className="group relative rounded-xl overflow-hidden cursor-pointer"
+              className={`group relative rounded-xl overflow-hidden cursor-pointer scroll-hidden-scale stagger-${i + 1}`}
             >
               {/* Placeholder image */}
               <div

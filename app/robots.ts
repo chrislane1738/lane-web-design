@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://lanewebdesign.com/sitemap.xml",
+    sitemap: "https://clanewebdesign.com/sitemap.xml",
   };
 }

@@ -10,8 +10,8 @@ export default function Hero() {
           <span className="text-primary">Grow Your Business</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-secondary max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
-          Custom web design and development that turns visitors into customers.
-          Modern, fast, and built to perform.
+          Custom web design and development for businesses in Concord, the Bay
+          Area, and beyond. Modern, fast, and built to perform.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-200">
           <Button href="#contact" variant="primary">

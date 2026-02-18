@@ -4,14 +4,28 @@ import { useState, type FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contactInfo = [
-  { icon: Mail, label: "hello@lanewebdesign.com" },
-  { icon: Phone, label: "(555) 123-4567" },
-  { icon: MapPin, label: "Austin, TX" },
+  {
+    icon: Mail,
+    label: "chris@clanewebdesign.com",
+    href: "mailto:chris@clanewebdesign.com",
+  },
+  {
+    icon: Phone,
+    label: "925-542-2284",
+    href: "tel:+19255422284",
+  },
+  {
+    icon: MapPin,
+    label: "Concord, CA",
+    href: undefined,
+  },
 ];
 
 export default function Contact() {
+  const sectionRef = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +39,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-muted">
+    <section id="contact" className="py-20 md:py-28 bg-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Get in Touch"
@@ -33,40 +47,40 @@ export default function Contact() {
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact info */}
-          <div>
+          <div className="scroll-hidden">
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Contact Information
             </h3>
             <div className="space-y-5">
-              {contactInfo.map((item) => (
-                <div key={item.label} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-secondary">{item.label}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <h4 className="font-semibold text-foreground mb-3">
-                Follow Us
-              </h4>
-              <div className="flex gap-3">
-                {["Twitter", "LinkedIn", "Instagram"].map((platform) => (
+              {contactInfo.map((item) => {
+                const content = (
+                  <>
+                    <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center shrink-0">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-secondary">{item.label}</span>
+                  </>
+                );
+
+                return item.href ? (
                   <a
-                    key={platform}
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-primary-light text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center text-sm font-medium"
+                    key={item.label}
+                    href={item.href}
+                    className="flex items-center gap-4 hover:opacity-80 transition-opacity"
                   >
-                    {platform[0]}
+                    {content}
                   </a>
-                ))}
-              </div>
+                ) : (
+                  <div key={item.label} className="flex items-center gap-4">
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Contact form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 scroll-hidden stagger-2">
             <div>
               <label
                 htmlFor="name"

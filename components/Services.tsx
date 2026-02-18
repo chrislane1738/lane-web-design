@@ -1,6 +1,9 @@
+"use client";
+
 import { Palette, Code, BarChart3, Wrench } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { LucideIcon } from "lucide-react";
 
 interface Service {
@@ -37,16 +40,18 @@ const services: Service[] = [
 ];
 
 export default function Services() {
+  const sectionRef = useScrollAnimation();
+
   return (
-    <section id="services" className="py-20 md:py-28 bg-muted">
+    <section id="services" className="py-20 md:py-28 bg-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Our Services"
           subtitle="Everything you need to establish and grow your online presence."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {services.map((service) => (
-            <Card key={service.title} className="text-center">
+          {services.map((service, i) => (
+            <Card key={service.title} className={`text-center scroll-hidden-scale stagger-${i + 1}`}>
               <div className="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary-light flex items-center justify-center">
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
