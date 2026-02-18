@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
@@ -12,7 +14,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-2">Lane Web Design</h3>
+            <div className="flex items-center gap-2.5 mb-2">
+              <Image
+                src="/logo.png"
+                alt="Lane Web Design logo"
+                width={32}
+                height={32}
+                className="brightness-0 invert"
+              />
+              <h3 className="text-xl font-bold">Lane Web Design</h3>
+            </div>
             <p className="text-white/60">
               Building modern websites that grow your business.
             </p>

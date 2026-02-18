@@ -3,12 +3,6 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "5+", label: "Years Experience" },
-  { value: "100%", label: "Client Satisfaction" },
-];
-
 export default function About() {
   const sectionRef = useScrollAnimation();
 
@@ -45,27 +39,13 @@ export default function About() {
             </p>
 
             {/* Local community callout */}
-            <div className="rounded-xl bg-primary-light border border-primary/20 p-5 mb-8">
+            <div className="rounded-xl bg-primary-light border border-primary/20 p-5">
               <p className="text-foreground font-medium leading-relaxed">
                 Proudly based in Concord, CA — we love helping local businesses
                 across the Bay Area build a stronger online presence. Whether
                 you&apos;re around the corner or across the country, we&apos;re
                 here to help.
               </p>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-secondary mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

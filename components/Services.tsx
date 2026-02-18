@@ -1,6 +1,7 @@
 "use client";
 
-import { Palette, Code, BarChart3, Wrench } from "lucide-react";
+import { useState } from "react";
+import { Palette, Code, BarChart3, Wrench, ChevronDown } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -41,6 +42,7 @@ const services: Service[] = [
 
 export default function Services() {
   const sectionRef = useScrollAnimation();
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <section id="services" className="py-20 md:py-28 bg-muted" ref={sectionRef}>
@@ -63,6 +65,37 @@ export default function Services() {
               </p>
             </Card>
           ))}
+        </div>
+
+        {/* Read More dropdown */}
+        <div className="mt-10 text-center">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors cursor-pointer"
+          >
+            {expanded ? "Read Less" : "Read More"}
+            <ChevronDown
+              className={`w-5 h-5 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            />
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-in-out ${expanded ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"}`}
+          >
+            <div className="max-w-3xl mx-auto bg-card-bg rounded-xl p-6 md:p-8 shadow-sm border border-border text-left">
+              <p className="text-secondary leading-relaxed mb-4">
+                We build beautiful, high-performing websites with significantly
+                lower overhead costs passed on to you. We understand how important
+                online visibility is — and how much it can cost — which is why our
+                monthly web hosting runs around 25% cheaper than larger firms.
+              </p>
+              <p className="text-secondary leading-relaxed">
+                We offer full integration with donation platforms, payment
+                processors, and custom forms to fit your business needs. All data
+                is stored securely with modern encryption and best practices to
+                prevent any data leaks or breaches.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
