@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import Link from "next/link";
 import { type ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline";
@@ -10,10 +11,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark shadow-md hover:shadow-lg",
-  secondary: "bg-muted text-foreground hover:bg-muted-dark",
+    "bg-terracotta text-white hover:bg-terracotta-dark shadow-md hover:shadow-lg",
+  secondary:
+    "bg-sage text-white hover:bg-sage-dark shadow-md hover:shadow-lg",
   outline:
-    "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+    "border-2 border-terracotta text-terracotta hover:bg-terracotta hover:text-white",
 };
 
 export default function Button({
@@ -24,16 +26,16 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const classes = clsx(
-    "inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 cursor-pointer text-sm md:text-base",
+    "inline-flex items-center justify-center px-7 py-3 rounded-full font-medium transition-all duration-200 cursor-pointer text-sm md:text-base hover:scale-[1.02] active:scale-[0.98]",
     variantStyles[variant],
-    className
+    className,
   );
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <Link href={href} className={classes}>
         {children}
-      </a>
+      </Link>
     );
   }
 

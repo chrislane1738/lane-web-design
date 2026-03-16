@@ -1,25 +1,17 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
-// import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import HeroContent from "@/components/home/HeroContent";
+import ServicesTease from "@/components/home/ServicesTease";
+import FeaturedWork from "@/components/home/FeaturedWork";
+// import Testimonials from "@/components/home/Testimonials";  // Hidden until real testimonials
+import HomeCTA from "@/components/home/HomeCTA";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Portfolio />
-        {/* <Testimonials /> */}
-        <Contact />
-      </main>
-      <Footer />
+      <HeroContent />
+      <ServicesTease />
+      <FeaturedWork />
+      {/* <Testimonials /> */}
+      <HomeCTA />
     </>
   );
 }
