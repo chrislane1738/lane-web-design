@@ -11,7 +11,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const projectTiers = [
   {
     name: "Starter",
-    price: "$700",
+    price: "$595",
     description:
       "A polished, professional site to establish your online presence. Perfect for new businesses or a focused landing page.",
     features: [
@@ -27,7 +27,7 @@ const projectTiers = [
   },
   {
     name: "Standard",
-    price: "$1,600",
+    price: "$1,360",
     description:
       "Everything your small business needs to compete online. The full package for businesses ready to grow.",
     features: [
@@ -155,6 +155,9 @@ export default function PricingPage() {
               title="Project Packages"
               subtitle="One-time investment to get your site designed, built, and launched."
             />
+            <p className="text-terracotta font-semibold text-center -mt-10 md:-mt-12 mb-0">
+              Launch pricing: 15% off all packages as we build our portfolio.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 lg:gap-8 mt-12 md:mt-16">
             {projectTiers.map((tier, i) => (

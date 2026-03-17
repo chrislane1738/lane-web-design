@@ -85,12 +85,14 @@ export default function TypewriterServiceCard({
     >
       {/* Image placeholder */}
       <div className={reversed ? "md:[direction:ltr]" : ""}>
-        <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-sand to-terracotta/20 flex items-center justify-center">
-          <Icon
-            size={64}
-            className="text-terracotta/40 transition-opacity duration-500"
-            style={{ opacity: enabled ? 1 : 0.2 }}
-          />
+        <div
+          className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-sand to-terracotta/20 flex items-center justify-center transition-all duration-700 ease-out"
+          style={{
+            opacity: enabled ? 1 : 0,
+            transform: enabled ? "translateY(0)" : "translateY(24px)",
+          }}
+        >
+          <Icon size={64} className="text-terracotta/40" />
         </div>
       </div>
 

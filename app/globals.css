@@ -211,12 +211,12 @@ body {
 
 @keyframes cursor-to-l-top {
   from { transform: translate(52px, 80px); }
-  to   { transform: translate(52px, 14px); }
+  to   { transform: translate(52px, 20px); }
 }
 
 @keyframes cursor-down-l {
-  from { transform: translate(52px, 14px); }
-  to   { transform: translate(52px, 80px); }
+  from { transform: translate(52px, 20px); }
+  to   { transform: translate(52px, 68px); }
 }
 
 @keyframes cursor-right-l {
@@ -243,7 +243,7 @@ body {
 }
 
 .logo-animation-active .logo-l-foot {
-  animation: reveal-l-foot 0.5s var(--ease-out-expo) 3.5s forwards;
+  animation: reveal-l-foot 0.5s var(--ease-out-expo) 3.3s forwards;
 }
 
 .logo-animation-active .cursor-icon {
@@ -252,12 +252,12 @@ body {
     cursor-trace-c 2.0s linear 0.3s forwards,
     cursor-to-l-top 0.2s ease-in-out 2.3s forwards,
     cursor-down-l 0.8s var(--ease-out-expo) 2.5s forwards,
-    cursor-right-l 0.5s var(--ease-out-expo) 3.5s forwards,
-    cursor-fade-out 0.5s ease-out 4.0s forwards;
+    cursor-right-l 0.5s var(--ease-out-expo) 3.3s forwards,
+    cursor-fade-out 0.5s ease-out 3.8s forwards;
 }
 
 .logo-animation-active .logo-svg {
-  animation: logo-color-transition 0.5s ease-out 4.0s forwards;
+  animation: logo-color-transition 0.5s ease-out 3.8s forwards;
 }
 
 /* ===== Prefers reduced motion ===== */

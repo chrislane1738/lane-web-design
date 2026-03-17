@@ -1,5 +1,8 @@
 # Lane Web Design - Project Context
 
+## Workspace Location
+This project lives at `~/Desktop/Lane_Web_Design_Studio/business-site/`. The parent directory (`Lane_Web_Design_Studio/`) contains the root `CLAUDE.md` with studio-wide standards, the client template at `clients/_template/`, and the onboarding workflow at `docs/onboarding.md`.
+
 ## What This Is
 Portfolio/business site for Lane Web Design, a one-person web design studio in Concord, CA (Bay Area). Owner is Chris Lane. The site markets custom web design, development, SEO, and maintenance services to small businesses.
 

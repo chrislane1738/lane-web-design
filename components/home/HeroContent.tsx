@@ -117,12 +117,9 @@ export default function HeroContent() {
             Handcrafted web design for small businesses in Concord and the Bay
             Area. Distinctive and built to grow with you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button href="/contact" variant="primary">
               Start Your Project
-            </Button>
-            <Button href="/work" variant="outline">
-              View Our Work
             </Button>
           </div>
         </div>

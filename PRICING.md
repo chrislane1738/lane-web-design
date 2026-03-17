@@ -135,6 +135,21 @@ E-commerce has been removed from project types until that capability is built ou
 
 ---
 
+## Infrastructure & Workflow
+
+### Hosting Stack
+| Service | Cost | Notes |
+|---------|------|-------|
+| Vercel Pro | $20/mo flat | Hosts all sites (business + clients). CDN, CI/CD, SSL, analytics included. |
+| GitHub Free | $0 | Private repos for all projects |
+| Web3Forms | $0 | Contact forms, 250 submissions/mo free |
+| Cloudflare Registrar | ~$10.44/yr per .com | At-cost domain registration |
+
+### Client Project Workflow
+New client projects are scaffolded from a reusable template. See `../docs/onboarding.md` for the full step-by-step process from template copy through deployment.
+
+---
+
 ## Future Considerations
 
 - **E-commerce tier:** Not offered yet. Add when capability is established.

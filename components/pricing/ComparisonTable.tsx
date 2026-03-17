@@ -14,7 +14,7 @@ const rows: ComparisonRow[] = [
     label: "Upfront cost",
     diy: "$0 - $300",
     agency: "$5,000 - $20,000+",
-    lane: "$700 - $1,600",
+    lane: "$595 - $1,360",
   },
   {
     label: "Monthly cost",
