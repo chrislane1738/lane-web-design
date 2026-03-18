@@ -131,8 +131,11 @@ export default function ServicesPage() {
               and we&apos;ll show you what&apos;s possible.
             </p>
           </div>
-          <div className="reveal-up">
+          <div className="reveal-up flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">Get in Touch</Button>
+            <Button href="/pricing" variant="outline">
+              View Pricing
+            </Button>
           </div>
         </Container>
       </section>

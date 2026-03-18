@@ -39,6 +39,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={pathname === link.href ? "page" : undefined}
               className={`text-sm font-medium transition-colors duration-200 ${
                 pathname === link.href
                   ? "text-terracotta"
@@ -75,6 +76,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={`py-2.5 px-3 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.href
                     ? "text-terracotta bg-terracotta/5"

@@ -15,7 +15,7 @@ const projectTiers = [
     description:
       "A polished, professional site to establish your online presence. Perfect for new businesses or a focused landing page.",
     features: [
-      "1-3 custom-designed pages",
+      "Up to 6 custom-designed pages",
       "Mobile-responsive layout",
       "Basic on-page SEO",
       "1 round of revisions",
@@ -23,7 +23,7 @@ const projectTiers = [
     ],
     ctaText: "Get Started",
     ctaHref: "/contact",
-    meta: "1-3 pages",
+    meta: "Up to 6 pages",
   },
   {
     name: "Standard",
@@ -31,7 +31,7 @@ const projectTiers = [
     description:
       "Everything your small business needs to compete online. The full package for businesses ready to grow.",
     features: [
-      "5-7 custom-designed pages",
+      "Up to 10 custom-designed pages",
       "Mobile-responsive layout",
       "Contact form integration",
       "Google Business Profile setup",
@@ -44,7 +44,7 @@ const projectTiers = [
     badge: "Most Popular",
     ctaText: "Get Started",
     ctaHref: "/contact",
-    meta: "5-7 pages",
+    meta: "Up to 10 pages",
   },
   {
     name: "Custom",
@@ -52,7 +52,7 @@ const projectTiers = [
     description:
       "For larger or more complex projects that need a tailored approach. We'll scope it together and quote based on your needs.",
     features: [
-      "8+ pages, fully custom",
+      "11+ pages, fully custom",
       "CMS integration",
       "Advanced SEO strategy",
       "Custom functionality",
@@ -61,7 +61,7 @@ const projectTiers = [
     ],
     ctaText: "Get a Quote",
     ctaHref: "/contact",
-    meta: "8+ pages",
+    meta: "11+ pages",
   },
 ];
 
@@ -220,8 +220,11 @@ export default function PricingPage() {
               business, and we&apos;ll put together a plan that fits your budget.
             </p>
           </div>
-          <div className="reveal-up">
+          <div className="reveal-up flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">Get in Touch</Button>
+            <Button href="/services" variant="outline">
+              Explore Services
+            </Button>
           </div>
         </Container>
       </section>

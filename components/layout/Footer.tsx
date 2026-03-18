@@ -27,8 +27,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed">
-              Crafting distinctive websites for small businesses in Concord
-              and the Bay Area.
+              Custom web design for small businesses in Concord, Walnut
+              Creek, Pleasant Hill, and the greater East Bay.
             </p>
           </div>
 

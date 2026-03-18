@@ -2,42 +2,41 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://clanewebdesign.com";
-  const lastModified = new Date();
 
   return [
     {
       url: baseUrl,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/work`,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified,
+      lastModified: new Date("2026-03-17"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
