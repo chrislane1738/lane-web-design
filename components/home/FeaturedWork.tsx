@@ -7,16 +7,22 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
-    title: "Flying Squid Drones",
-    category: "Media & Photography",
-    image: "/work-flying-squid.png",
-    url: "https://flyingsquiddrones.com/",
+    title: "Payback Brazilian Jiu-Jitsu",
+    category: "Martial Arts & Fitness",
+    image: "/work-payback-bjj.png",
+    url: "https://paybackjiujitsu.com",
   },
   {
     title: "Stralane",
     category: "Finance & Technology",
     image: "/work-stralane.png",
     url: "https://stralane.com/",
+  },
+  {
+    title: "Flying Squid Drones",
+    category: "Media & Photography",
+    image: "/work-flying-squid.png",
+    url: "https://flyingsquiddrones.com/",
   },
 ];
 
@@ -34,13 +40,17 @@ export default function FeaturedWork() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {projects.map((project) => (
+          {projects.map((project, i) => (
             <a
               key={project.title}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal-up group block"
+              className={`reveal-up group block ${
+                i === projects.length - 1 && projects.length % 2 === 1
+                  ? "md:col-start-1 md:col-end-3 md:w-[calc(50%-1rem)] md:mx-auto"
+                  : ""
+              }`}
             >
               <div className="relative rounded-2xl overflow-hidden bg-warm-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
                 {/* Screenshot */}
