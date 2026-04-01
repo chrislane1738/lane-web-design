@@ -1,26 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
-  variable: "--font-dm-serif",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#C75B3A",
+  themeColor: "#0A246A",
 };
 
 export const metadata: Metadata = {
@@ -149,9 +135,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${dmSerif.variable} ${dmSans.variable} antialiased`}>
+      <body className="font-sans">
         <Header />
-        <main className="pt-16 md:pt-18">{children}</main>
+        <main style={{ paddingTop: 96 }}>{children}</main>
         <Footer />
       </body>
     </html>
