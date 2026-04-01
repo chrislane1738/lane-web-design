@@ -1,58 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  /* Color palette */
-  --cream: #FDF6EC;
-  --sand: #F5E6D0;
-  --terracotta: #C75B3A;
-  --terracotta-dark: #A94A2E;
-  --terracotta-light: #E8956F;
-  --sage: #7C9A6E;
-  --sage-dark: #5F7A53;
-  --sage-light: #A3BD96;
-  --charcoal: #2D2A26;
-  --charcoal-light: #4A453F;
-  --warm-white: #FFFDF9;
+  /* Windows 2000 / Classic Windows color palette */
+  --win-silver: #D4D0C8;
+  --win-silver-light: #ECE9D8;
+  --win-silver-dark: #ADA9A0;
+  --win-white: #FFFFFF;
+  --win-blue: #0A246A;
+  --win-blue-title: #0A246A;
+  --win-blue-title-end: #A6CAF0;
+  --win-navy: #000080;
+  --win-navy-light: #1C52A0;
+  --win-teal: #008080;
+  --win-black: #000000;
+  --win-dark-text: #000000;
+  --win-gray-text: #808080;
+  --win-highlight: #316AC5;
+  --win-highlight-text: #FFFFFF;
+  --win-button-face: #D4D0C8;
+  --win-button-shadow: #808080;
+  --win-button-dark-shadow: #404040;
+  --win-button-light: #FFFFFF;
+  --win-button-highlight: #EFEFEF;
+  --win-desktop: #3A6EA5;
+  --win-scrollbar: #C0C0C0;
 
-  /* Semantic aliases */
-  --background: var(--cream);
-  --foreground: var(--charcoal);
-  --primary: var(--terracotta);
-  --primary-dark: var(--terracotta-dark);
-  --primary-light: var(--terracotta-light);
-  --secondary: var(--sage);
-  --secondary-dark: var(--sage-dark);
-  --accent: var(--sage-light);
-  --muted: var(--sand);
-  --border: #E8DFD3;
-  --card-bg: var(--warm-white);
-  --nav-bg: rgba(253, 246, 236, 0.85);
+  /* Semantic aliases — Win2K themed */
+  --background: var(--win-silver-light);
+  --foreground: var(--win-dark-text);
+  --primary: var(--win-navy);
+  --primary-dark: #000060;
+  --primary-light: var(--win-navy-light);
+  --secondary: var(--win-teal);
+  --secondary-dark: #006060;
+  --accent: var(--win-highlight);
+  --muted: var(--win-silver);
+  --border: var(--win-silver-dark);
+  --card-bg: var(--win-silver-light);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(45, 42, 38, 0.06);
-  --shadow-md: 0 4px 12px rgba(45, 42, 38, 0.08);
-  --shadow-lg: 0 12px 32px rgba(45, 42, 38, 0.1);
-
-  /* Easing */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* 3D border effect colors */
+  --raised-light: #FFFFFF;
+  --raised-mid: #D4D0C8;
+  --raised-dark: #808080;
+  --raised-darkest: #404040;
 
   /* Fonts */
-  --font-display: var(--font-dm-serif);
-  --font-body: var(--font-dm-sans);
+  --font-display: var(--font-tahoma);
+  --font-body: var(--font-tahoma);
 }
 
 @theme inline {
-  --color-cream: var(--cream);
-  --color-sand: var(--sand);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-dark: var(--terracotta-dark);
-  --color-terracotta-light: var(--terracotta-light);
-  --color-sage: var(--sage);
-  --color-sage-dark: var(--sage-dark);
-  --color-sage-light: var(--sage-light);
-  --color-charcoal: var(--charcoal);
-  --color-charcoal-light: var(--charcoal-light);
-  --color-warm-white: var(--warm-white);
+  --color-win-silver: var(--win-silver);
+  --color-win-silver-light: var(--win-silver-light);
+  --color-win-silver-dark: var(--win-silver-dark);
+  --color-win-white: var(--win-white);
+  --color-win-blue: var(--win-blue);
+  --color-win-navy: var(--win-navy);
+  --color-win-teal: var(--win-teal);
+  --color-win-black: var(--win-black);
+  --color-win-highlight: var(--win-highlight);
+  --color-win-desktop: var(--win-desktop);
+  --color-win-button-face: var(--win-button-face);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -65,244 +73,270 @@
   --color-border: var(--border);
   --color-card-bg: var(--card-bg);
   --font-sans: var(--font-body);
-  --font-display: var(--font-dm-serif);
+  --font-display: var(--font-tahoma);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
+  background: var(--win-desktop);
   color: var(--foreground);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: "Tahoma", "Verdana", system-ui, sans-serif;
+  font-size: 11px;
 }
 
-/* ===== Scroll-triggered reveal animations ===== */
+/* ===== Windows 2000 3D border utilities ===== */
 
-.reveal-up,
-.reveal-left,
-.reveal-right,
-.reveal-scale {
-  opacity: 0;
-  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+.win-raised {
+  border-top: 1px solid var(--raised-light);
+  border-left: 1px solid var(--raised-light);
+  border-bottom: 1px solid var(--raised-darkest);
+  border-right: 1px solid var(--raised-darkest);
+  outline: 1px solid var(--raised-dark);
+  outline-offset: -2px;
 }
 
-.reveal-up {
-  transform: translateY(32px);
+.win-sunken {
+  border-top: 1px solid var(--raised-darkest);
+  border-left: 1px solid var(--raised-darkest);
+  border-bottom: 1px solid var(--raised-light);
+  border-right: 1px solid var(--raised-light);
+  outline: 1px solid var(--raised-dark);
+  outline-offset: -2px;
 }
 
-.reveal-left {
-  transform: translateX(-32px);
+.win-panel {
+  background: var(--win-silver-light);
+  border-top: 2px solid var(--raised-light);
+  border-left: 2px solid var(--raised-light);
+  border-bottom: 2px solid var(--raised-darkest);
+  border-right: 2px solid var(--raised-darkest);
+  box-shadow: inset 1px 1px 0 var(--raised-mid), inset -1px -1px 0 var(--raised-dark);
 }
 
-.reveal-right {
-  transform: translateX(32px);
+.win-inset {
+  background: var(--win-white);
+  border-top: 1px solid var(--raised-dark);
+  border-left: 1px solid var(--raised-dark);
+  border-bottom: 1px solid var(--raised-light);
+  border-right: 1px solid var(--raised-light);
+  box-shadow: inset 1px 1px 0 var(--raised-darkest);
 }
 
-.reveal-scale {
-  transform: scale(0.92);
+.win-button {
+  background: var(--win-button-face);
+  border-top: 1px solid var(--raised-light);
+  border-left: 1px solid var(--raised-light);
+  border-bottom: 1px solid var(--raised-dark);
+  border-right: 1px solid var(--raised-dark);
+  box-shadow: inset 1px 1px 0 var(--raised-mid), inset -1px -1px 0 var(--raised-darkest);
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+  color: var(--win-black);
+  cursor: default;
+  padding: 3px 10px;
+  min-width: 75px;
 }
 
-.revealed {
-  opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+.win-button:active,
+.win-button-pressed {
+  border-top: 1px solid var(--raised-dark);
+  border-left: 1px solid var(--raised-dark);
+  border-bottom: 1px solid var(--raised-light);
+  border-right: 1px solid var(--raised-light);
+  box-shadow: inset 1px 1px 0 var(--raised-darkest), inset -1px -1px 0 var(--raised-mid);
+  padding: 4px 9px 2px 11px;
 }
 
-/* Timing variants */
-.reveal-fast { transition-duration: 0.4s; }
-.reveal-slow { transition-duration: 1s; }
-
-/* ===== Page transition ===== */
-
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.win-button-primary {
+  background: var(--win-navy);
+  color: var(--win-white);
+  border-top: 2px solid var(--raised-light);
+  border-left: 2px solid var(--raised-light);
+  border-bottom: 2px solid var(--raised-darkest);
+  border-right: 2px solid var(--raised-darkest);
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+  cursor: default;
+  padding: 4px 12px;
+  font-weight: bold;
 }
 
-.page-transition {
-  animation: page-enter 0.5s var(--ease-out-expo) both;
+/* Title bar gradient */
+.win-titlebar {
+  background: linear-gradient(to right, var(--win-blue-title) 0%, var(--win-blue-title-end) 100%);
+  color: var(--win-white);
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-/* ===== Typewriter cursor ===== */
-
-@keyframes blink-cursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* Window container */
+.win-window {
+  background: var(--win-silver-light);
+  border-top: 2px solid var(--raised-light);
+  border-left: 2px solid var(--raised-light);
+  border-bottom: 2px solid var(--raised-darkest);
+  border-right: 2px solid var(--raised-darkest);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
-.typewriter-cursor {
+/* Scrollbar-like decoration */
+.win-scrollbar-track {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--win-silver) 0px,
+    var(--win-silver) 1px,
+    var(--win-silver-light) 1px,
+    var(--win-silver-light) 3px
+  );
+}
+
+/* Hyperlink style */
+.win-link {
+  color: var(--win-navy);
+  text-decoration: underline;
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+}
+
+.win-link:hover {
+  color: #FF0000;
+}
+
+/* ===== Marquee / ticker ===== */
+@keyframes marquee-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.win-marquee-inner {
   display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: var(--terracotta);
-  margin-left: 1px;
-  vertical-align: text-bottom;
-  animation: blink-cursor 0.7s step-end infinite;
+  white-space: nowrap;
+  animation: marquee-scroll 20s linear infinite;
 }
 
-/* ===== Cursor logo animation keyframes ===== */
-/* Logo geometry: C arc center (38,50) r=33, endpoints at (52,20) and (52,80) */
-/* L vertical: x=46 y=20 w=12 h=60 | L foot: x=46 y=68 w=30 h=12 */
-
-@keyframes cursor-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* ===== Blink ===== */
+@keyframes win-blink {
+  0%, 100% { visibility: visible; }
+  50% { visibility: hidden; }
 }
 
-@keyframes cursor-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+.win-blink {
+  animation: win-blink 1s step-end infinite;
 }
 
-@keyframes draw-c-arc {
-  to {
-    stroke-dashoffset: 0;
-  }
+/* ===== Taskbar ===== */
+.win-taskbar {
+  background: var(--win-silver);
+  border-top: 1px solid var(--raised-light);
+  box-shadow: inset 0 1px 0 var(--raised-light);
 }
 
-@keyframes reveal-l-vertical {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
+/* ===== Menubar ===== */
+.win-menubar {
+  background: var(--win-silver-light);
+  border-bottom: 1px solid var(--raised-dark);
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
 }
 
-@keyframes reveal-l-foot {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
+/* ===== Status bar ===== */
+.win-statusbar {
+  background: var(--win-silver);
+  border-top: 1px solid var(--raised-dark);
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 10px;
+  padding: 2px 6px;
 }
 
-@keyframes logo-color-transition {
-  from { color: var(--warm-white); }
-  to { color: var(--terracotta); }
+/* ===== Groupbox ===== */
+.win-groupbox {
+  border: 1px solid var(--raised-dark);
+  border-top: none;
+  padding: 12px 10px 10px;
+  position: relative;
+  margin-top: 8px;
 }
 
-/* Cursor traces along C arc outer edge — viewBox coordinates */
-@keyframes cursor-trace-c {
-  0%   { transform: translate(52px, 20px); }
-  5%   { transform: translate(46px, 18px); }
-  10%  { transform: translate(39px, 17px); }
-  15%  { transform: translate(33px, 18px); }
-  20%  { transform: translate(26px, 19px); }
-  25%  { transform: translate(20px, 22px); }
-  30%  { transform: translate(15px, 26px); }
-  35%  { transform: translate(11px, 31px); }
-  40%  { transform: translate(8px, 37px); }
-  45%  { transform: translate(6px, 43px); }
-  50%  { transform: translate(5px, 50px); }
-  55%  { transform: translate(6px, 57px); }
-  60%  { transform: translate(8px, 63px); }
-  65%  { transform: translate(11px, 69px); }
-  70%  { transform: translate(15px, 74px); }
-  75%  { transform: translate(20px, 78px); }
-  80%  { transform: translate(26px, 81px); }
-  85%  { transform: translate(33px, 83px); }
-  90%  { transform: translate(39px, 83px); }
-  95%  { transform: translate(46px, 82px); }
-  100% { transform: translate(52px, 80px); }
+.win-groupbox-label {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  background: var(--win-silver-light);
+  padding: 0 4px;
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
 }
 
-@keyframes cursor-to-l-top {
-  from { transform: translate(52px, 80px); }
-  to   { transform: translate(52px, 20px); }
+/* ===== Progress bar ===== */
+@keyframes win-progress {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 0; }
 }
 
-@keyframes cursor-down-l {
-  from { transform: translate(52px, 20px); }
-  to   { transform: translate(52px, 68px); }
+.win-progress-bar {
+  background: var(--win-navy);
+  height: 12px;
+  width: 60%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--win-navy) 0px,
+    var(--win-navy) 14px,
+    var(--win-navy-light) 14px,
+    var(--win-navy-light) 16px
+  );
+  animation: win-progress 0.5s linear infinite;
 }
 
-@keyframes cursor-right-l {
-  from { transform: translate(52px, 68px); }
-  to   { transform: translate(76px, 68px); }
+/* ===== Selection highlight ===== */
+.win-selected {
+  background: var(--win-highlight);
+  color: var(--win-highlight-text);
 }
 
-@keyframes scroll-hint-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+/* ===== Table ===== */
+.win-table {
+  border-collapse: collapse;
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 11px;
+  width: 100%;
 }
 
-.scroll-hint {
-  animation: scroll-hint-bounce 2s ease-in-out infinite;
+.win-table th {
+  background: var(--win-silver);
+  border: 1px solid var(--raised-dark);
+  padding: 2px 6px;
+  text-align: left;
+  font-weight: bold;
 }
 
-/* Animated logo element timing */
-.logo-animation-active .logo-c-arc {
-  animation: draw-c-arc 2.0s linear 0.3s forwards;
+.win-table td {
+  border: 1px solid var(--raised-dark);
+  padding: 2px 6px;
+  background: var(--win-white);
 }
 
-.logo-animation-active .logo-l-vertical {
-  animation: reveal-l-vertical 0.8s var(--ease-out-expo) 2.5s forwards;
+.win-table tr:nth-child(even) td {
+  background: #F0F0F0;
 }
 
-.logo-animation-active .logo-l-foot {
-  animation: reveal-l-foot 0.5s var(--ease-out-expo) 3.3s forwards;
-}
-
-.logo-animation-active .cursor-icon {
-  animation:
-    cursor-fade-in 0.3s ease-out forwards,
-    cursor-trace-c 2.0s linear 0.3s forwards,
-    cursor-to-l-top 0.2s ease-in-out 2.3s forwards,
-    cursor-down-l 0.8s var(--ease-out-expo) 2.5s forwards,
-    cursor-right-l 0.5s var(--ease-out-expo) 3.3s forwards,
-    cursor-fade-out 0.5s ease-out 3.8s forwards;
-}
-
-.logo-animation-active .logo-svg {
-  animation: logo-color-transition 0.5s ease-out 3.8s forwards;
-}
-
-/* ===== Prefers reduced motion ===== */
-
+/* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .reveal-up,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .page-transition {
+  .win-marquee-inner {
     animation: none;
   }
-
-  .logo-animation-active .logo-c-arc,
-  .logo-animation-active .logo-l-vertical,
-  .logo-animation-active .logo-l-foot,
-  .logo-animation-active .cursor-icon,
-  .logo-animation-active .logo-svg {
+  .win-blink {
     animation: none;
   }
-
-  .logo-c-arc {
-    stroke-dashoffset: 0 !important;
-  }
-
-  .logo-l-vertical,
-  .logo-l-foot {
-    clip-path: inset(0 0 0 0) !important;
-  }
-
-  .scroll-hint {
+  .win-progress-bar {
     animation: none;
-  }
-
-  .typewriter-cursor {
-    animation: none;
-    display: none;
   }
 }
