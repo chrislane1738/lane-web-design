@@ -43,6 +43,12 @@ const projects = [
     gradient: "from-violet-300 to-indigo-500",
     large: false,
   },
+  {
+    title: "Lorenzo Jackson for Student Trustee",
+    category: "Political Campaign",
+    gradient: "from-slate-700 to-slate-900",
+    large: false,
+  },
 ];
 
 export default function WorkPage() {

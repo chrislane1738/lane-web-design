@@ -24,6 +24,12 @@ const projects = [
     image: "/work-flying-squid.png",
     url: "https://flyingsquiddrones.com/",
   },
+  {
+    title: "Lorenzo Jackson for Student Trustee",
+    category: "Political Campaign",
+    image: "/work-lorenzo-jackson.png",
+    url: "#",
+  },
 ];
 
 export default function FeaturedWork() {
@@ -52,31 +58,50 @@ export default function FeaturedWork() {
                   : ""
               }`}
             >
-              <div className="relative rounded-2xl overflow-hidden bg-warm-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
-                {/* Screenshot */}
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <div className="absolute inset-4 sm:inset-6 rounded-lg overflow-hidden border-2 border-charcoal/10">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} website screenshot`}
-                      fill
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+              {/* Browser chrome frame */}
+              <div className="rounded-t-xl overflow-hidden">
+                {/* Tab bar */}
+                <div className="bg-[#202124] px-3 pt-2.5 pb-0">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5 shrink-0">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#EC6A5E]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#F4BF4F]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#61C554]" />
+                    </div>
+                    <div className="flex items-center bg-[#35363A] rounded-t-md px-3 py-1.5 ml-1">
+                      <span className="text-[10px] text-white/50 truncate">{project.title}</span>
+                    </div>
                   </div>
                 </div>
-                {/* Info */}
-                <div className="p-6">
-                  <p className="text-xs font-medium text-terracotta uppercase tracking-wider mb-1">
-                    {project.category}
-                  </p>
-                  <h3
-                    className="text-xl text-charcoal"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {project.title}
-                  </h3>
+                {/* Address bar */}
+                <div className="bg-[#202124] px-3 pb-2.5 pt-1.5">
+                  <div className="bg-[#35363A] rounded-full px-3 py-1.5 flex items-center">
+                    <div className="w-2.5 h-2.5 rounded-full border border-white/20 mr-2 shrink-0" />
+                    <span className="text-[10px] text-white/35 truncate">{project.url === "#" ? "coming-soon.com" : project.url.replace("https://", "")}</span>
+                  </div>
                 </div>
+                {/* Screenshot */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} website screenshot`}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+              {/* Info */}
+              <div className="bg-[#202124] px-5 py-4 rounded-b-xl -mt-[1px]">
+                <p className="text-xs font-medium text-terracotta-light uppercase tracking-wider mb-1">
+                  {project.category}
+                </p>
+                <h3
+                  className="text-lg text-white"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {project.title}
+                </h3>
               </div>
             </a>
           ))}
